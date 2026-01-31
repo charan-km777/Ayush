@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* Enhanced AYUSH Herbal Theme */
+:root {
+  /* Herbal & Medicinal Color Palette */
+  --herbal-sage: #87a96b;
+  --herbal-forest: #2d5016;
+  --herbal-mint: #98d8c8;
+  --herbal-earth: #8b7355;
+  --herbal-gold: #d4af37;
+  --herbal-lavender: #9678b6;
+  --herbal-terracotta: #c65d3b;
+  --herbal-cream: #faf8f3;
+  --herbal-bark: #5d4e37;
+  
+  /* Nature-inspired gradients */
+  --gradient-herbal: linear-gradient(135deg, #87a96b 0%, #2d5016 100%);
+  --gradient-healing: linear-gradient(135deg, #98d8c8 0%, #87a96b 100%);
+  --gradient-earth: linear-gradient(135deg, #faf8f3 0%, #d4af37 100%);
+  
+  /* Semantic colors with herbal theme */
+  --background: 250 100% 98%;
+  --foreground: 120 20% 15%;
+  --card: 120 30% 97%;
+  --card-foreground: 120 20% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 120 20% 15%;
+  --primary: 100 35% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 150 25% 85%;
+  --secondary-foreground: 120 20% 15%;
+  --muted: 120 15% 92%;
+  --muted-foreground: 120 10% 40%;
+  --accent: 45 80% 55%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 10 80% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 120 20% 85%;
+  --input: 120 20% 85%;
+  --ring: 100 35% 45%;
+  --radius: 0.75rem;
+}
+
+/* Base styles with herbal aesthetics */
+body {
+  @apply bg-gradient-to-br from-[#faf8f3] via-[#f5f3ed] to-[#e8f5e9];
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+}
+
+/* Typography with organic feel */
+h1, h2, h3, h4, h5, h6 {
+  @apply text-[--herbal-forest];
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl;
+  background: var(--gradient-herbal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card enhancements with herbal texture */
+.card {
+  @apply bg-white/90 backdrop-blur-sm;
+  border: 2px solid rgba(135, 169, 107, 0.2);
+  box-shadow: 0 4px 20px rgba(45, 80, 22, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);
+  border-color: rgba(135, 169, 107, 0.4);
+}
+
+/* Herbal pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(152, 216, 200, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(135, 169, 107, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Organic button styles */
+button {
+  @apply transition-all duration-300;
+  font-weight: 500;
+}
+
+button:hover {
+  @apply transform -translate-y-0.5;
+}
+
+/* Custom scrollbar with herbal theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[--herbal-cream];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[--herbal-sage] rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[--herbal-forest];
+}
+
+/* Ayurvedic symbol decorations */
+.dosha-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.dosha-card::after {
+  content: '🌿';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 120px;
+  opacity: 0.05;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+/* Herbal badge styles */
+.badge-herbal {
+  @apply bg-gradient-to-r from-[--herbal-sage] to-[--herbal-mint] text-white;
+  box-shadow: 0 2px 10px rgba(135, 169, 107, 0.3);
+}
+
+/* Animation for organic feel */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
